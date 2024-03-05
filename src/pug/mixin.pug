@@ -1,0 +1,6 @@
+- let centerMenu = [{menu:"Home", url:"#Home" },{menu:"Why MISOCIAL", url:"#Why MISOCIAL" },{menu:"Features", url:"#Features" },{menu:"Articles", url:"#Articles" },{menu:"Pricing", url:"#Pricing"},{menu:"get started", url:"#get started"}]
+mixin print-menu(items)
+    ul 
+        for item in items
+            li
+                a(href="#" class="item") #{item.menu}

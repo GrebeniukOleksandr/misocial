@@ -1,0 +1,76 @@
+include mixin.pug
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="css/styles.css")
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+        title Misocial
+    body 
+        header.header
+            .container 
+                .logo
+                    img(src="img/icons/logo.png" alt="")
+                    a(href="#") Misocial
+                +print-menu(centerMenu)
+            .hero
+                span.line social marketing analytics
+                h1 Pricing Table
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+            a(href="#").arrows 
+        main.main
+                .personal
+                    .personal__title
+                        span.line Misocial
+                        h2 Select a Plan
+                        p  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+                    nav.personal__nav
+                        ul.personal__items
+                            li.personal__item-img
+                                img(src="img/icons/Asset3.svg", alt="icon")
+                            li.personal__item-subtitle personal
+                            li.personal__item-sum 
+                                sup $ 
+                                span 0
+                                sub /month
+                            li.personal__item-text Lorem ipsum dolor sit amet.sed do eiusmod tempor incididunt ut.Labore et dolore magna aliqua. quis nostrud exercitation ullamco laboris. Ea commodo consequat.
+                            li.personal__item-btn select plan          
+                        ul.personal__items
+                            li.personal__item-img 
+                                img(src="img/icons/Asset2.svg", alt="icon")
+                            li.personal__item-subtitle personal
+                            li.personal__item-sum 
+                                sup $ 
+                                span 29
+                                sub /month
+                            li.personal__item-text Lorem ipsum dolor sit amet.sed do eiusmod tempor incididunt ut.Labore et dolore magna aliqua. quis nostrud exercitation ullamco laboris. Ea commodo consequat.
+                            li.personal__item-btn select plan          
+                        ul.personal__items
+                            li.personal__item-img 
+                                img(src="img/icons/Asset1.svg", alt="icon")
+                            li.personal__item-subtitle personal
+                            li.personal__item-sum 
+                                sup $ 
+                                span 49
+                                sub /month
+                            li.personal__item-text Lorem ipsum dolor sit amet.sed do eiusmod tempor incididunt ut.Labore et dolore magna aliqua. quis nostrud exercitation ullamco laboris. Ea commodo consequat.
+                            li.personal__item-btn select plan   
+                .marketing
+                    p.marketing__subtitle SOCAL MARKETING & ANALYTICS
+                    h2.marketing__title Take control of your data
+                    .marketing__btn
+                        a.marketing__link(href="#") get started
+                        a.marketing__link(href="#") explore features
+        footer.footer
+            .footer__top
+                .logo
+                    img(src="img/icons/logo.png" alt="")
+                    a(href="#") Misocial
+                +print-menu(centerMenu)
+            .footer__bottom
+                .footer__copy © 2017 Mass Impressions & Tranmautritam. Make the right impression.
+                .footer__social 
+                    img(src="img/icons/social.png", alt="")
