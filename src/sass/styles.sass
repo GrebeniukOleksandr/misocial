@@ -54,6 +54,7 @@ ul
     a
         display: inline-block
         padding: 13rem 30rem
+        font-weight: 500
         color: #fff
         border-bottom: 1rem solid rgba(255, 255, 255, 0)
         text-decoration: none
@@ -162,8 +163,9 @@ ul
         font-weight: 400
     &__nav
         display: flex
+        flex-wrap: wrap
         justify-content: space-around
-        margin-bottom: 120rem
+        margin-bottom: 100rem
     &__items
         display: flex
         flex-direction: column
@@ -173,6 +175,7 @@ ul
         border: 1rem solid $border-color
         border-radius: 30rem
         transition: all .5s ease
+        margin-bottom: 20px
         &:hover
             box-shadow: 0 0 46rem rgba(204,204,223,0.71)
             cursor: pointer
@@ -223,30 +226,18 @@ ul
         border: 1rem solid $border-color
         transition: all .5s ease
 .marketing
-    padding: 180rem 0
+    padding: 155rem 0
     position: relative
     display: flex
     flex-direction: column
     align-items: center
     justify-content: center
-    background-image: linear-gradient(-60deg, #87d3cd 0%, #6d45e1 100%)
-    z-index: 1
-    &::after
-        content: ''
-        position: absolute
-        width: 100%
-        height: 100%
-        top: 0
-        left: 0
-        right: 0
-        background: url(../img/map.png) top no-repeat
-        background-size: cover
-        z-index: -1
-        opacity: 0.4
+    background: url(../img/map_bg.png) center no-repeat
+
     &__subtitle
         font-size: 14rem
         letter-spacing: 1rem
-        line-height: 32rem
+        margin-bottom: 6rem
         text-transform: uppercase
         color: #ffffff
         font-weight: 700
@@ -254,17 +245,17 @@ ul
         margin: 18rem 0
         font-size: 60rem
         letter-spacing: -2rem
-        line-height: 72rem
         color: #ffffff
         font-weight: 500
     &__btn
         display: flex
+        flex-wrap: wrap
     &__link
-        width: 150rem
+        width: 190rem
         text-align: center
         margin: 0 5rem
         text-decoration: none
-        padding: 9rem 32rem
+        padding: 8rem 0
         font-size: 12rem
         letter-spacing: 1rem
         line-height: 32rem
@@ -275,13 +266,16 @@ ul
         filter: drop-shadow(0 0 10.5rem rgba(204,204,223,0.5))
         background-color: #ffffff
         border: 1rem solid $border-color
+        transition: all .5s
+        margin-bottom: 20px
         &:hover
             color: #fff
             background-color: $primary-color
             border-color: $primary-color
 .footer
-    max-width: 1620rem
+    max-width: 1640rem
     margin: 0 auto
+    padding: 0 10rem
     &__top
         display: flex
         justify-content: space-between
@@ -313,3 +307,24 @@ ul
             color: #72727f
             &:hover
                 color: #756edc
+    .footer__social-link
+        display: inline-block
+        height: 16rem
+        &:hover
+            filter: brightness(400%) invert(100%)
+            transform: scale(120%)
+        & + .footer__social-link
+            margin-left: 15px
+    .fb
+        width: 12rem
+        background: url(../img/icons/social.png) 0 0
+    .tw 
+        width: 16rem
+        background: url(../img/icons/social.png) -24rem 0
+    .google
+        width: 24rem
+        background: url(../img/icons/social.png) -53rem 0
+    .inst
+        width: 17rem
+        background: url(../img/icons/social.png) -89rem 0
+
