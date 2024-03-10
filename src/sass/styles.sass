@@ -9,10 +9,14 @@ html,body
     
 .header
     position: relative
-    height: 770rem
+    height: 580rem
     background-image: linear-gradient(-60deg, #87d3cd 0%, #6d45e1 100%)
     z-index: 1
-    margin-bottom: 121rem
+    margin-bottom: 45rem
+    +media(770)
+        margin-bottom: 121rem
+        height: 770rem  
+
     &::after
         content: ''
         position: absolute
@@ -21,7 +25,7 @@ html,body
         top: 0
         background: url(../img/hero.png) center no-repeat
         background-size: cover
-        z-index: 2
+        z-index: -1
         opacity: 0.4
 .container
     position: relative
@@ -32,6 +36,7 @@ html,body
     margin: 0 auto
     padding: 45rem 10rem 0
     z-index: 3
+    flex-direction: row
 .logo
     display: flex
     align-items: center
@@ -39,15 +44,19 @@ html,body
         padding-left: 17rem
         color: #fff
         text-decoration: none
-        font-size: 30rem
+        font-size: 18rem
         letter-spacing: 6rem
         font-weight: 700
         text-transform: uppercase
+        +media(770)
+            font-size: 30rem
 ul 
-    display: flex
-    margin: 0
-    justify-content: flex-end
+    display: none
     font-size: $primary-font
+    +media(1120)
+        display: flex
+        margin: 0
+        justify-content: flex-end
     li 
         list-style: none
         color: white
@@ -75,21 +84,102 @@ ul
                 background-color: $primary-color
                 border-color: $primary-color 
                 text-decoration: none
+.burger 
+    position: relative
+    width: 30rem
+    height: 30rem
+    cursor: pointer
+    span
+        position: absolute
+        width: 30rem
+        height: 2rem
+        background-color: #fff
+        transition: all .3s
+        &:first-child
+            top: 5rem
+        &:nth-child(2)
+            top:15rem
+        &:last-child
+            top: 25rem
+    +media(1120)
+        display: none
+// для бургер меню налаштування
+.open
+    position: relative
+    ul
+        background-image: linear-gradient(-60deg, #87d3cd 0%,#87d3cd 35%, #6d45e1 100%)
+        text-align: center
+        position: absolute
+        left: 0
+        right: 0
+        top: 95rem
+        display: block
+        padding-left: 0
+        li
+            width: 100%
+            margin-bottom: 10px
+        a
+            width: 100%
+            font-size: 18px
+            padding: 12rem 0
+        li:last-child
+            a
+                width: 200rem
+                margin: 0 auto
+                padding: 20rem 0
+    .burger 
+        span
+            &:first-child
+                top: 15rem
+                transform: rotate(45deg)
+            &:nth-child(2)
+                background-color: transparent
+            &:last-child
+                top: 15rem
+                transform: rotate(-45deg)
 .hero
-    position: absolute
-    top: 50%
-    left: 50%
-    transform: translate(-50%, -50%)
-    z-index: 3
+    position: relative
+    margin-top: 85rem
     color: #fff
     text-align: center
+    z-index: 2
+    +media(770)
+        margin-top: 181rem
+    span 
+        font-size: 12px
+        letter-spacing: 0.5rem
+        +media(480)
+            font-size: 16px
+            letter-spacing: 1rem
     h1 
-        font-size: 86rem
+        font-size: 40rem
         font-weight: 500
+        +media(480)
+            font-size: 60rem
+        +media(660)
+            font-size: 86rem
     p
-        width: 380px
+        max-width: 380px
         margin: 0 auto
         font-size: 16rem
+.line  
+    position: relative
+    font-size: 14rem
+    letter-spacing: 1rem
+    text-transform: uppercase
+    font-weight: 700
+    &::after,
+    &::before
+        content:''
+        position: absolute
+        top: 8rem
+        width: 24rem
+        height: 1rem
+        background-color: #fff
+    &::after
+        right: -43rem
+    &::before
+        left: -44rem
 .arrows
     position: absolute
     width: 64rem
@@ -99,7 +189,7 @@ ul
     left: 50%
     transform: translateX(-50%)
     background-color: #fff
-    z-index: 3
+    z-index: 9
     cursor: pointer
     &::after
         content: ''
@@ -126,7 +216,9 @@ ul
     margin: 0 auto
     &__title
         text-align: center
-        margin-bottom: 100rem
+        margin-bottom: 40px
+        +media(770)
+            margin-bottom: 100rem
     .line 
         position: relative
         font-size: 14rem
@@ -155,7 +247,7 @@ ul
         color: #4f4f6f
         font-weight: 500 
     p
-        width: 394rem
+        max-width: 394rem
         margin: 0 auto
         font-size: 16rem
         line-height: 28rem
@@ -165,17 +257,23 @@ ul
         display: flex
         flex-wrap: wrap
         justify-content: space-around
-        margin-bottom: 100rem
+        margin-bottom: 40rem
+        +media(770)
+            margin-bottom: 100rem
     &__items
         display: flex
         flex-direction: column
         align-items: center
+        padding:20rem 30rem
         justify-content: center
-        padding:65rem 72rem
         border: 1rem solid $border-color
         border-radius: 30rem
         transition: all .5s ease
-        margin-bottom: 20px
+        margin: 7rem
+        +media(770)
+            margin:0 0 20rem 0
+            padding:65rem 72rem
+
         &:hover
             box-shadow: 0 0 46rem rgba(204,204,223,0.71)
             cursor: pointer
@@ -243,13 +341,19 @@ ul
         font-weight: 700
     &__title
         margin: 18rem 0
-        font-size: 60rem
         letter-spacing: -2rem
         color: #ffffff
         font-weight: 500
+        font-size: 30rem
+        +media(480)
+            font-size: 40rem
+        +media(660)
+            font-size: 60rem
+
     &__btn
         display: flex
         flex-wrap: wrap
+        justify-content: center
     &__link
         width: 190rem
         text-align: center
@@ -276,17 +380,30 @@ ul
     max-width: 1640rem
     margin: 0 auto
     padding: 0 10rem
+    ul
+        display: none
+        +media(1120)
+            display: flex
     &__top
         display: flex
-        justify-content: space-between
         align-items: center
-        margin: 50rem 0 30rem
+        justify-content: center
+        margin: 20rem 0
+        +media(770)
+            justify-content: space-between
+            margin: 50rem 0 30rem
     &__bottom
+        text-align: center
         display: flex
+        flex-direction: column-reverse
+        row-gap: 15rem
         justify-content: space-between
         align-items: center
         padding: 26rem 0 33rem
         border-top:1rem solid rgba(189, 189, 194, 0.2)
+        +media(770)
+            text-align: left
+            flex-direction: row
     &__copy
         opacity: 0.502
         font-size: 14rem
@@ -327,4 +444,4 @@ ul
     .inst
         width: 17rem
         background: url(../img/icons/social.png) -89rem 0
-
+    
